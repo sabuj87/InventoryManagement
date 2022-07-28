@@ -240,7 +240,7 @@
      var rate=$("#addproduct").val();
      
      newId++;
-    $('#mainTable').append('<tr id='+newId+'><td class=name'+newId+' >'+name+'</td><td class=rate'+newId+' >'+rate+'</td><td><input class=qty'+newId+'  onkeyup="totalAmount(this,'+rate+','+newId+')" type="text" style="width: 70px;"  "></td><td><p id="'+newId+'totalAmount" ></p></td><td><input class="alld discount'+newId+'" onkeyup="NetAmount(this,'+newId+')" type="text" style="width: 70px;""></td><td><p class="all" id="'+newId+'discount" ></p></td></tr>');
+    $('#mainTable').append('<tr id='+newId+'><td class=name'+newId+' >'+name+'</td><td class=rate'+newId+' >'+rate+'</td><td><input class=qty'+newId+'  onkeyup="totalAmount(this,'+rate+','+newId+')" type="text" style="width: 70px;"  "></td><td><p id="'+newId+'totalAmount" ></p></td><td><input class="alld discount'+newId+'" onkeyup="NetAmount(this.value,'+newId+')" type="text" style="width: 70px;""></td><td><p class="all" id="'+newId+'discount" ></p></td></tr>');
 
    });
 
