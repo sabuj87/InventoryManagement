@@ -118,7 +118,7 @@
 
              </td>
              <td>
-              <input id="quantity"  onclick="totalAmount(this,{{ $inventoryProduct->products->rate}} ,{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->qty}}" onkeyup="totalAmount(this,{{ $inventoryProduct->products->rate}},{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->qty}}">
+              <input id="quantity"  onclick="totalAmount(this,{{ $inventoryProduct->products->rate}} ,{{ $inventoryProduct->products->id}});NetAmount({{ $inventoryProduct->discount}},{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->qty}}" onkeyup="totalAmount(this,{{ $inventoryProduct->products->rate}},{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->qty}}">
               
 
            </td>
@@ -129,7 +129,7 @@
          </td>
 
          <td>
-          <input class="alld" onload="NetAmount(this,{{ $inventoryProduct->products->id}})" onkeyup="NetAmount(this,{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->discount}}">
+          <input class="alld" onclick="NetAmount(this.value,{{ $inventoryProduct->products->id}})" onkeyup="NetAmount(this.value,{{ $inventoryProduct->products->id}})" type="text" style="width: 70px;"  value="{{$inventoryProduct->discount}}">
           
 
        </td>
@@ -221,7 +221,7 @@
    
     var totalAmount= $(idili).text();
      
-    var netamount=totalAmount-discount.value;
+    var netamount=totalAmount-discount;
     var idinet="#"+id+"discount";
     $(idinet).text(netamount);
     
